@@ -1,0 +1,738 @@
+{
+  # This is a holochain scaffold yaml definition. http://ceptr.org/projects/holochain
+
+  # DNA File Version
+  # Version indicator for changes to DNA
+  "Version": "0.0.1",
+  "Generator": "hc-scaffold:0.1.0+e8a394b",
+
+  # Application DNA
+  # The DNA specifies the entry structure and functions and configuration of your application
+  "DNA": {
+
+    # DNA File Version
+    # Version indicator for changes to DNA
+    "Version": 1,
+
+    # DNA Unique ID
+    # This ID differentiates your app from others. For example, to tell one Slack team from another which same code.
+    "UUID": "c8afc2dc-f4e0-4d91-92b2-18fefb9dde0c",
+
+    # Application Name
+    # What would you like to call your holochain app?
+    "Name": "omni",
+
+    # Properties
+    # Properties that you want available across all Zomes.
+    "Properties": {
+
+      # Application Description
+      # Briefly describe your holochain app.
+      "description": "Holochain dApp for academic publishing. Facilitates peer-reviewing of articles and dissemination of knowledge.",
+
+      # Language
+      # The base (human) language of this holochain app.
+      "language": "en"
+    },
+
+    # Properties Schema File
+    # Describes the entries in the Properties section of your dna file.
+    "PropertiesSchemaFile": "properties_schema.json",
+
+    # DHT Settings
+    # Configure the properties of your Distributed Hash Table (e.g. hash algorithm, neighborhood size, etc.).
+    "DHTConfig": {
+      "HashType": "sha2-256"
+    },
+
+    # Zomes
+    # List the Zomes your application will support.
+    "Zomes": [
+      {
+
+        # Zome Name
+        # The name of this code module.
+        "Name": "articles",
+
+        # Zome Description
+        # What is the purpose of this module?
+        "Description": "Handles article text and metadata",
+
+        # Ribosome Type
+        # What scripting language will you code in?
+        "RibosomeType": "js",
+
+        # Code File
+        # Points to the main script file for this Zome.
+        "CodeFile": "articles.js",
+
+        # Zome Entries
+        # Data stored and tracked by your Zome.
+        "Entries": [
+          {
+            "Name": "publishedArticle", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "json", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "Schema": "{\n  \"definitions\": {},\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"$id\": \"http://example.com/root.json\",\n  \"type\": \"object\",\n  \"title\": \"The Root Schema\",\n  \"required\": [\n    \"title\",\n    \"abstract\",\n    \"body\",\n    \"keywords\"\n  ],\n  \"properties\": {\n    \"title\": {\n      \"$id\": \"#/properties/title\",\n      \"type\": \"string\",\n      \"title\": \"The Title Schema\",\n      \"default\": \"\",\n      \"examples\": [\n        \"Article title\"\n      ],\n      \"pattern\": \"^(.*)$\"\n    },\n    \"abstract\": {\n      \"$id\": \"#/properties/abstract\",\n      \"type\": \"string\",\n      \"title\": \"The Abstract Schema\",\n      \"default\": \"\",\n      \"examples\": [\n        \"Abstract text\"\n      ],\n      \"pattern\": \"^(.*)$\"\n    },\n    \"body\": {\n      \"$id\": \"#/properties/body\",\n      \"type\": \"string\",\n      \"title\": \"The Body Schema\",\n      \"default\": \"\",\n      \"examples\": [\n        \"Lorem ipsum\"\n      ],\n      \"pattern\": \"^(.*)$\"\n    },\n    \"keywords\": {\n      \"$id\": \"#/properties/keywords\",\n      \"type\": \"array\",\n      \"title\": \"The Keywords Schema\",\n      \"items\": {\n        \"$id\": \"#/properties/keywords/items\",\n        \"type\": \"string\",\n        \"title\": \"The Items Schema\",\n        \"default\": \"\",\n        \"examples\": [\n          \"Physics\",\n          \"Nanotechnology\"\n        ],\n        \"pattern\": \"^(.*)$\"\n      }\n    }\n  }\n}",
+            "_": "cr"
+          },
+          {
+            "Name": "draftArticle", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "json", # What type of data should this entry store?
+            "Sharing": "private", # Should this entry be publicly accessible?
+            "Schema": "{\n  \"definitions\": {},\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"$id\": \"http://example.com/root.json\",\n  \"type\": \"object\",\n  \"title\": \"The Root Schema\",\n  \"required\": [\n    \"title\",\n    \"abstract\",\n    \"body\",\n    \"keywords\"\n  ],\n  \"properties\": {\n    \"title\": {\n      \"$id\": \"#/properties/title\",\n      \"type\": \"string\",\n      \"title\": \"The Title Schema\",\n      \"default\": \"\",\n      \"examples\": [\n        \"Article title\"\n      ],\n      \"pattern\": \"^(.*)$\"\n    },\n    \"abstract\": {\n      \"$id\": \"#/properties/abstract\",\n      \"type\": \"string\",\n      \"title\": \"The Abstract Schema\",\n      \"default\": \"\",\n      \"examples\": [\n        \"Abstract text\"\n      ],\n      \"pattern\": \"^(.*)$\"\n    },\n    \"body\": {\n      \"$id\": \"#/properties/body\",\n      \"type\": \"string\",\n      \"title\": \"The Body Schema\",\n      \"default\": \"\",\n      \"examples\": [\n        \"Lorem ipsum\"\n      ],\n      \"pattern\": \"^(.*)$\"\n    },\n    \"keywords\": {\n      \"$id\": \"#/properties/keywords\",\n      \"type\": \"array\",\n      \"title\": \"The Keywords Schema\",\n      \"items\": {\n        \"$id\": \"#/properties/keywords/items\",\n        \"type\": \"string\",\n        \"title\": \"The Items Schema\",\n        \"default\": \"\",\n        \"examples\": [\n          \"Physics\",\n          \"Nanotechnology\"\n        ],\n        \"pattern\": \"^(.*)$\"\n      }\n    }\n  }\n}",
+            "_": "crud"
+          },
+          {
+            "Name": "authors", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "json", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "Schema": "{\n  \"definitions\": {},\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"$id\": \"http://example.com/root.json\",\n  \"type\": \"object\",\n  \"title\": \"The Root Schema\",\n  \"required\": [\n    \"authorIDs\",\n    \"authorNames\"\n  ],\n  \"properties\": {\n    \"authorIDs\": {\n      \"$id\": \"#/properties/authorIDs\",\n      \"type\": \"array\",\n      \"title\": \"The Authorids Schema\",\n      \"items\": {\n        \"$id\": \"#/properties/authorIDs/items\",\n        \"type\": \"string\",\n        \"title\": \"The Items Schema\",\n        \"default\": \"\",\n        \"examples\": [\n          \"Author1's hash\",\n          \"Author2's hash\"\n        ],\n        \"pattern\": \"^(.*)$\"\n      }\n    },\n    \"authorNames\": {\n      \"$id\": \"#/properties/authorNames\",\n      \"type\": \"array\",\n      \"title\": \"The Authornames Schema\",\n      \"items\": {\n        \"$id\": \"#/properties/authorNames/items\",\n        \"type\": \"string\",\n        \"title\": \"The Items Schema\",\n        \"default\": \"\",\n        \"examples\": [\n          \"Author1's title and name \",\n          \"Author2's title and name\"\n        ],\n        \"pattern\": \"^(.*)$\"\n      }\n    }\n  }\n}",
+            "_": "crud"
+          }
+        ],
+
+        # Zome Functions
+        # Functions which can be called in your Zome's API.
+        "Functions": [
+          {
+            "Name": "publishedArticleCreate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:publishedArticle"
+          },
+          {
+            "Name": "publishedArticleRead", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:publishedArticle"
+          },
+          {
+            "Name": "draftArticleCreate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "private", # Level to which is this function exposed.
+            "_": "c:draftArticle"
+          },
+          {
+            "Name": "draftArticleRead", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "private", # Level to which is this function exposed.
+            "_": "r:draftArticle"
+          },
+          {
+            "Name": "draftArticleUpdate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "private", # Level to which is this function exposed.
+            "_": "u:draftArticle"
+          },
+          {
+            "Name": "draftArticleDelete", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "private", # Level to which is this function exposed.
+            "_": "d:draftArticle"
+          },
+          {
+            "Name": "authorsCreate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:authors"
+          },
+          {
+            "Name": "authorsRead", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:authors"
+          },
+          {
+            "Name": "authorsUpdate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "u:authors"
+          },
+          {
+            "Name": "authorsDelete", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "d:authors"
+          },
+          {
+            "Name": "listPublishedArticles", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "", # Level to which is this function exposed.
+          }
+        ],
+
+        # Zome Source Code
+        # The logic that will control Zome behavior
+        "Code": "'use strict';\n\n// -----------------------------------------------------------------\n//  This stub Zome code file was auto-generated by hc-scaffold\n// -----------------------------------------------------------------\n\n// -----------------------------------------------------------------\n//  Exposed functions with custom logic https://developer.holochain.org/API_reference\n// -----------------------------------------------------------------\n\nfunction publishedArticleCreate (publishedArticleEntry) {\n  var publishedArticleHash = commit(\"publishedArticle\", publishedArticleEntry);\n  return publishedArticleHash;\n}\n\nfunction publishedArticleRead (publishedArticleHash) {\n  var publishedArticle = get(publishedArticleHash);\n  return publishedArticle;\n}\n\nfunction draftArticleCreate (draftArticleEntry) {\n  var draftArticleHash = commit(\"draftArticle\", draftArticleEntry);\n  return draftArticleHash;\n}\n\nfunction draftArticleRead (draftArticleHash) {\n  var draftArticle = get(draftArticleHash);\n  return draftArticle;\n}\n\nfunction draftArticleUpdate (draftArticleHash) {\n  var sampleValue={\"title\":\"Article title\",\"abstract\":\"Abstract text\",\"body\":\"Lorem ipsum\",\"keywords\":[\"Physics\"],\"extraField\":true};\n  var draftArticleOutHash = update(\"draftArticle\", sampleValue, draftArticleHash);\n  return draftArticleOutHash;\n}\n\nfunction draftArticleDelete (draftArticleHash) {\n  var result = remove(draftArticleHash, \"\");\n  return result;\n}\n\nfunction authorsCreate (authorsEntry) {\n  var authorsHash = commit(\"authors\", authorsEntry);\n  return authorsHash;\n}\n\nfunction authorsRead (authorsHash) {\n  var authors = get(authorsHash);\n  return authors;\n}\n\nfunction authorsUpdate (authorsHash) {\n  var sampleValue={\"authorIDs\":[\"Author1's hash\"],\"authorNames\":[\"Author1's title and name \"],\"extraField\":true};\n  var authorsOutHash = update(\"authors\", sampleValue, authorsHash);\n  return authorsOutHash;\n}\n\nfunction authorsDelete (authorsHash) {\n  var result = remove(authorsHash, \"\");\n  return result;\n}\n\nfunction listPublishedArticles (params) {\n  // your custom code here\n  return {};\n}\n\n\n// -----------------------------------------------------------------\n//  The Genesis Function https://developer.holochain.org/genesis\n// -----------------------------------------------------------------\n\n/**\n * Called only when your source chain is generated\n * @return {boolean} success\n */\nfunction genesis () {\n  return true;\n}\n\n// -----------------------------------------------------------------\n//  Validation functions for every change to the local chain or DHT\n// -----------------------------------------------------------------\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {*} entry - the entry data to be set\n * @param {object} header - header for the entry containing properties EntryLink, Time, and Type\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateCommit (entryName, entry, header, pkg, sources) {\n  switch (entryName) {\n    case \"publishedArticle\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"draftArticle\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"authors\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {*} entry - the entry data to be set\n * @param {object} header - header for the entry containing properties EntryLink, Time, and Type\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validatePut (entryName, entry, header, pkg, sources) {\n  switch (entryName) {\n    case \"publishedArticle\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"draftArticle\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"authors\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {*} entry - the entry data to be set\n * @param {object} header - header for the entry containing properties EntryLink, Time, and Type\n * @param {string} replaces - the hash for the entry being updated\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateMod (entryName, entry, header, replaces, pkg, sources) {\n  switch (entryName) {\n    case \"publishedArticle\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"draftArticle\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"authors\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {string} hash - the hash of the entry to remove\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateDel (entryName, hash, pkg, sources) {\n  switch (entryName) {\n    case \"publishedArticle\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"draftArticle\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"authors\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {string} baseHash - the hash of the base entry being linked\n * @param {?} links - ?\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateLink (entryName, baseHash, links, pkg, sources) {\n  switch (entryName) {\n    case \"publishedArticle\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"draftArticle\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"authors\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validatePutPkg (entryName) {\n  return null;\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validateModPkg (entryName) {\n  return null;\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validateDelPkg (entryName) {\n  return null;\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validateLinkPkg (entryName) {\n  return null;\n}"
+      },
+      {
+
+        # Zome Name
+        # The name of this code module.
+        "Name": "agents",
+
+        # Zome Description
+        # What is the purpose of this module?
+        "Description": "Handles information about researchers, editors, readers",
+
+        # Ribosome Type
+        # What scripting language will you code in?
+        "RibosomeType": "js",
+
+        # Code File
+        # Points to the main script file for this Zome.
+        "CodeFile": "agents.js",
+
+        # Zome Entries
+        # Data stored and tracked by your Zome.
+        "Entries": [
+          {
+            "Name": "firstName", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "string", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "_": "cru"
+          },
+          {
+            "Name": "lastName", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "string", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "_": "cru"
+          },
+          {
+            "Name": "publishedLinks", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "links", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "_": "-"
+          },
+          {
+            "Name": "draftLinks", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "links", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "_": "-"
+          }
+        ],
+
+        # Zome Functions
+        # Functions which can be called in your Zome's API.
+        "Functions": [
+          {
+            "Name": "firstNameCreate", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:firstName"
+          },
+          {
+            "Name": "firstNameRead", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:firstName"
+          },
+          {
+            "Name": "firstNameUpdate", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "u:firstName"
+          },
+          {
+            "Name": "lastNameCreate", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:lastName"
+          },
+          {
+            "Name": "lastNameRead", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:lastName"
+          },
+          {
+            "Name": "lastNameUpdate", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "u:lastName"
+          },
+          {
+            "Name": "listResearchers", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "", # Level to which is this function exposed.
+          }
+        ],
+
+        # Zome Source Code
+        # The logic that will control Zome behavior
+        "Code": "'use strict';\n\n// -----------------------------------------------------------------\n//  This stub Zome code file was auto-generated by hc-scaffold\n// -----------------------------------------------------------------\n\n// -----------------------------------------------------------------\n//  Exposed functions with custom logic https://developer.holochain.org/API_reference\n// -----------------------------------------------------------------\n\nfunction firstNameCreate (firstNameEntry) {\n  var firstNameHash = commit(\"firstName\", firstNameEntry);\n  return firstNameHash;\n}\n\nfunction firstNameRead (firstNameHash) {\n  var firstName = get(firstNameHash);\n  return firstName;\n}\n\nfunction firstNameUpdate (firstNameHash) {\n  var sampleValue={\"extraField\":true};\n  var firstNameOutHash = update(\"firstName\", sampleValue, firstNameHash);\n  return firstNameOutHash;\n}\n\nfunction lastNameCreate (lastNameEntry) {\n  var lastNameHash = commit(\"lastName\", lastNameEntry);\n  return lastNameHash;\n}\n\nfunction lastNameRead (lastNameHash) {\n  var lastName = get(lastNameHash);\n  return lastName;\n}\n\nfunction lastNameUpdate (lastNameHash) {\n  var sampleValue={\"extraField\":true};\n  var lastNameOutHash = update(\"lastName\", sampleValue, lastNameHash);\n  return lastNameOutHash;\n}\n\nfunction listResearchers (params) {\n  // your custom code here\n  return {};\n}\n\n\n// -----------------------------------------------------------------\n//  The Genesis Function https://developer.holochain.org/genesis\n// -----------------------------------------------------------------\n\n/**\n * Called only when your source chain is generated\n * @return {boolean} success\n */\nfunction genesis () {\n  return true;\n}\n\n// -----------------------------------------------------------------\n//  Validation functions for every change to the local chain or DHT\n// -----------------------------------------------------------------\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {*} entry - the entry data to be set\n * @param {object} header - header for the entry containing properties EntryLink, Time, and Type\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateCommit (entryName, entry, header, pkg, sources) {\n  switch (entryName) {\n    case \"firstName\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"lastName\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"publishedLinks\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"draftLinks\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {*} entry - the entry data to be set\n * @param {object} header - header for the entry containing properties EntryLink, Time, and Type\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validatePut (entryName, entry, header, pkg, sources) {\n  switch (entryName) {\n    case \"firstName\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"lastName\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"publishedLinks\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"draftLinks\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {*} entry - the entry data to be set\n * @param {object} header - header for the entry containing properties EntryLink, Time, and Type\n * @param {string} replaces - the hash for the entry being updated\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateMod (entryName, entry, header, replaces, pkg, sources) {\n  switch (entryName) {\n    case \"firstName\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"lastName\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"publishedLinks\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"draftLinks\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {string} hash - the hash of the entry to remove\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateDel (entryName, hash, pkg, sources) {\n  switch (entryName) {\n    case \"firstName\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"lastName\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"publishedLinks\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"draftLinks\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {string} baseHash - the hash of the base entry being linked\n * @param {?} links - ?\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateLink (entryName, baseHash, links, pkg, sources) {\n  switch (entryName) {\n    case \"firstName\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"lastName\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"publishedLinks\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"draftLinks\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validatePutPkg (entryName) {\n  return null;\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validateModPkg (entryName) {\n  return null;\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validateDelPkg (entryName) {\n  return null;\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validateLinkPkg (entryName) {\n  return null;\n}"
+      }
+    ]
+  },
+
+  # TestSets
+  # Auto-Generated test sets for hcdev package
+  "TestSets": [
+    {
+
+      # Name
+      # Name of the Test Set
+      "Name": "articles",
+      "TestSet": {
+        "Tests": [
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for publishedArticleCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "articles",
+
+            # Function Name
+            # The function to test
+            "FnName": "publishedArticleCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": {
+              "title": "Article title",
+              "abstract": "Abstract text",
+              "body": "Lorem ipsum",
+              "keywords": [
+                "Physics"
+              ]
+            },
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for publishedArticleRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "articles",
+
+            # Function Name
+            # The function to test
+            "FnName": "publishedArticleRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": {
+              "title": "Article title",
+              "abstract": "Abstract text",
+              "body": "Lorem ipsum",
+              "keywords": [
+                "Physics"
+              ]
+            }
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for draftArticleCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "articles",
+
+            # Function Name
+            # The function to test
+            "FnName": "draftArticleCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": {
+              "title": "Article title",
+              "abstract": "Abstract text",
+              "body": "Lorem ipsum",
+              "keywords": [
+                "Physics"
+              ]
+            },
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for draftArticleRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "articles",
+
+            # Function Name
+            # The function to test
+            "FnName": "draftArticleRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": {
+              "title": "Article title",
+              "abstract": "Abstract text",
+              "body": "Lorem ipsum",
+              "keywords": [
+                "Physics"
+              ]
+            }
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for draftArticleUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "articles",
+
+            # Function Name
+            # The function to test
+            "FnName": "draftArticleUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for draftArticleDelete",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "articles",
+
+            # Function Name
+            # The function to test
+            "FnName": "draftArticleDelete",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for authorsCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "articles",
+
+            # Function Name
+            # The function to test
+            "FnName": "authorsCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": {
+              "authorIDs": [
+                "Author1's hash"
+              ],
+              "authorNames": [
+                "Author1's title and name "
+              ]
+            },
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for authorsRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "articles",
+
+            # Function Name
+            # The function to test
+            "FnName": "authorsRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": {
+              "authorIDs": [
+                "Author1's hash"
+              ],
+              "authorNames": [
+                "Author1's title and name "
+              ]
+            }
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for authorsUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "articles",
+
+            # Function Name
+            # The function to test
+            "FnName": "authorsUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for authorsDelete",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "articles",
+
+            # Function Name
+            # The function to test
+            "FnName": "authorsDelete",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for listPublishedArticles",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "articles",
+
+            # Function Name
+            # The function to test
+            "FnName": "listPublishedArticles",
+
+            # Input
+            # Input sent to the function
+            "Input": "",
+
+            # Output
+            # Output from the function to validate
+            "Output": {}
+          }
+        ]
+      }
+    },
+    {
+
+      # Name
+      # Name of the Test Set
+      "Name": "agents",
+      "TestSet": {
+        "Tests": [
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for firstNameCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "agents",
+
+            # Function Name
+            # The function to test
+            "FnName": "firstNameCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": "test",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for firstNameRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "agents",
+
+            # Function Name
+            # The function to test
+            "FnName": "firstNameRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "test"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for firstNameUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "agents",
+
+            # Function Name
+            # The function to test
+            "FnName": "firstNameUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for lastNameCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "agents",
+
+            # Function Name
+            # The function to test
+            "FnName": "lastNameCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": "test",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for lastNameRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "agents",
+
+            # Function Name
+            # The function to test
+            "FnName": "lastNameRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "test"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for lastNameUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "agents",
+
+            # Function Name
+            # The function to test
+            "FnName": "lastNameUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for listResearchers",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "agents",
+
+            # Function Name
+            # The function to test
+            "FnName": "listResearchers",
+
+            # Input
+            # Input sent to the function
+            "Input": "",
+
+            # Output
+            # Output from the function to validate
+            "Output": {}
+          }
+        ]
+      }
+    }
+  ]
+}

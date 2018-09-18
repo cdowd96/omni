@@ -1,0 +1,61 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "title",
+    "abstract",
+    "body",
+    "keywords"
+  ],
+  "properties": {
+    "title": {
+      "$id": "#/properties/title",
+      "type": "string",
+      "title": "The Title Schema",
+      "default": "",
+      "examples": [
+        "Article title"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "abstract": {
+      "$id": "#/properties/abstract",
+      "type": "string",
+      "title": "The Abstract Schema",
+      "default": "",
+      "examples": [
+        "Abstract text"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "body": {
+      "$id": "#/properties/body",
+      "type": "string",
+      "title": "The Body Schema",
+      "default": "",
+      "examples": [
+        "Lorem ipsum"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "keywords": {
+      "$id": "#/properties/keywords",
+      "type": "array",
+      "title": "The Keywords Schema",
+      "items": {
+        "$id": "#/properties/keywords/items",
+        "type": "string",
+        "title": "The Items Schema",
+        "default": "",
+        "examples": [
+          "Physics",
+          "Nanotechnology"
+        ],
+        "pattern": "^(.*)$"
+      }
+    }
+  }
+}

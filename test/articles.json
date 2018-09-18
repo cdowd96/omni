@@ -1,0 +1,123 @@
+{
+  "Tests": [
+    {
+      "Convey": "auto-generated test for publishedArticleCreate",
+      "Zome": "articles",
+      "FnName": "publishedArticleCreate",
+      "Input": {
+        "title": "Article title",
+        "abstract": "Abstract text",
+        "body": "Lorem ipsum",
+        "keywords": [
+          "Physics"
+        ]
+      },
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for publishedArticleRead",
+      "Zome": "articles",
+      "FnName": "publishedArticleRead",
+      "Input": "%h%",
+      "Output": {
+        "title": "Article title",
+        "abstract": "Abstract text",
+        "body": "Lorem ipsum",
+        "keywords": [
+          "Physics"
+        ]
+      }
+    },
+    {
+      "Convey": "auto-generated test for draftArticleCreate",
+      "Zome": "articles",
+      "FnName": "draftArticleCreate",
+      "Input": {
+        "title": "Article title",
+        "abstract": "Abstract text",
+        "body": "Lorem ipsum",
+        "keywords": [
+          "Physics"
+        ]
+      },
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for draftArticleRead",
+      "Zome": "articles",
+      "FnName": "draftArticleRead",
+      "Input": "%h%",
+      "Output": {
+        "title": "Article title",
+        "abstract": "Abstract text",
+        "body": "Lorem ipsum",
+        "keywords": [
+          "Physics"
+        ]
+      }
+    },
+    {
+      "Convey": "auto-generated test for draftArticleUpdate",
+      "Zome": "articles",
+      "FnName": "draftArticleUpdate",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for draftArticleDelete",
+      "Zome": "articles",
+      "FnName": "draftArticleDelete",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for authorsCreate",
+      "Zome": "articles",
+      "FnName": "authorsCreate",
+      "Input": {
+        "authorIDs": [
+          "Author1's hash"
+        ],
+        "authorNames": [
+          "Author1's title and name "
+        ]
+      },
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for authorsRead",
+      "Zome": "articles",
+      "FnName": "authorsRead",
+      "Input": "%h%",
+      "Output": {
+        "authorIDs": [
+          "Author1's hash"
+        ],
+        "authorNames": [
+          "Author1's title and name "
+        ]
+      }
+    },
+    {
+      "Convey": "auto-generated test for authorsUpdate",
+      "Zome": "articles",
+      "FnName": "authorsUpdate",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for authorsDelete",
+      "Zome": "articles",
+      "FnName": "authorsDelete",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for listPublishedArticles",
+      "Zome": "articles",
+      "FnName": "listPublishedArticles",
+      "Input": "",
+      "Output": {}
+    }
+  ]
+}
