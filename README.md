@@ -1,7 +1,5 @@
 # Omni <img src="logo.png" alt="" width="48px" height="48px">
-
-Omni is a fully accessible digital space for sharing and discussing new knowledge.
-
+Omni — the next era of publishing.
 
 # Introduction
 
@@ -34,8 +32,6 @@ Articles are still mostly treated as static PDFs with the figures and tables mas
 ## The power of collective intelligence
 
 We've been interested in the developments of social networking platforms and how strongly they can shape human behaviour, for good or for worse. One one side you've got the likes of Facebook, Twitter and YouTube where users can quickly devolve into echo-chambers and polarised communities which breed outrage. On these platforms, content is often micromanaged to maximise user attention. On the other hand, communities like Wikipedia, Reddit, Stack Overflow and Quora (and sometimes even 4chan) are capable of aggregating high quality content and facilitating insightful and productive discussions. This shows the power our digital architectures and community spaces can have on individual and collective behaviour, and much could be learned from these to help us design systems which are intended to prioritise relevant content to users and to maximise collective intelligence.
-
-
 
 # Omni: A fully accessible digital space for sharing and discussing new knowledge
 
