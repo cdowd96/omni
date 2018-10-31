@@ -1,5 +1,7 @@
-# Omni 
+# Omni <img src="logo.png" alt="" width="40px" height="40px">
+
 Omni is a fully accessible digital space for sharing and discussing new knowledge.
+
 
 # Introduction
 
