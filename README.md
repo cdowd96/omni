@@ -1,5 +1,5 @@
 # Omni <img src="logo.png" alt="" width="48px" height="48px">
-Omni is the next era of publishing.
+***Omni is the next era of publishing.***
 
 # Introduction
 
