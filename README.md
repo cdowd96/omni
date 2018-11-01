@@ -1,9 +1,12 @@
-# Omni <img src="logo.png" alt="" width="48px" height="48px">
+<img align="left" width="100" height="100" src="logo.png">
+
+# The Omni Project
+
 ***Omni is the next era of publishing.***
 
 # Introduction
 
-Omni is helping to bring about the next generation of scholarly communications. The current scholarly publishing system is broken—new knowledge that benefits everyone is locked behind expensive paywalls and certain individuals/companies gain disproportionate levels of power and influence, allowing them to shape the system to work for them and not for the research ecosystem as a whole. More researchers and institutions are willing to fork the bill to allow anyone to read their research, but this can't possibly be sustainable. Simply put, scholars, institutions and citizens **are getting screwed**, and we're only just beginning to wake up to this fact—publishers still write the rules of the game.
+The Omni Project is helping to bring about the next generation of scholarly communications. The current scholarly publishing system is broken—new knowledge that benefits everyone is locked behind expensive paywalls and certain individuals/companies gain disproportionate levels of power and influence, allowing them to shape the system to work for them and not for the research ecosystem as a whole. More researchers and institutions are willing to fork the bill to allow anyone to read their research, but this can't possibly be sustainable. Simply put, scholars, institutions and citizens **are getting screwed**, and we're only just beginning to wake up to this fact—publishers still write the rules of the game.
 
 # Motivations
 
