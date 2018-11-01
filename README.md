@@ -7,7 +7,7 @@ Omni is helping to bring about the next generation of scholarly communications. 
 
 # Motivations
 
-The journal publication model made sense for the last few hundreds of years, but has rapidly become outdated within the new digital context. Although many journals have gone paperless, the *process* of scholarly communications has not changed—publishing and journal issuing has merely been converted to a digital format, and publishers have not made much use of the many powerful digital features we have today.
+The journal publication model made sense for the last few hundreds of years, but has rapidly become outdated within the new digital context. Although many journals have gone paperless, the *process* of scholarly communications has not changed—publishing and journal issuing has merely been rendered in a digital format, and publishers have not made much use of the many powerful digital features we have today.
 
 ## False scarcity and unnecessary inaccessibility
 
