@@ -1,9 +1,11 @@
+</br></br>
+
 <img align="left" width="100" height="100" src="logo.png">
 
 # The Omni Project
 
 ***Omni is the next era of publishing.***
-</br></br>
+</br></br></br>
 
 # Introduction
 
