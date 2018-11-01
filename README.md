@@ -3,6 +3,7 @@
 # The Omni Project
 
 ***Omni is the next era of publishing.***
+</br></br>
 
 # Introduction
 
