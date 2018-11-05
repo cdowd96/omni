@@ -45,7 +45,7 @@ The intellectual pursuit of discovery always produces tremendous value to societ
 
 # Omni: A fully accessible digital space for sharing and discussing new knowledge
 
-Omni is an **open source** and **distributed** web application enabling scholars to share their research with all relevant audiences, without delays. There is no publisher or publishing in Omni, yet all processes of editing, peer-review, discussion and dissemination of new knowledge are performed by members of the scholarly community, and all valuable contributions are tracked. 
+Omni is an **open source** and **distributed** web application enabling scholars to share their research with all relevant audiences, without delays. There is no publisher or publishing in Omni, yet all processes of editing, peer-review, discussion and dissemination of new knowledge can be performed by any user of Omni, and all valuable contributions are tracked.
 
 All data are stored in a Holochain *Distributed Hash Table (DHT)*, which is a shared database not owned by any central party, but is supported by all users of Omni using their currently unused spare computing resources. As long as some users are running the Omni application, no one can shut it down. Since everyone owns their own data in Omni, no one can prevent an author from sharing their research to as many communities as they wish.
 
