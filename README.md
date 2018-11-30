@@ -4,7 +4,8 @@
 
 # The Omni Project
 
-***Omni is the next era of publishing.***
+***Omni is the next era of scholarly communications.***
+
 </br></br></br>
 
 # Introduction
@@ -19,7 +20,7 @@ The journal publication model made sense for the last few hundreds of years, but
 
 The publishing system relies on false scarcity and artificial inaccessibility to reap the profits of the priceless work of authors. Not only is this unfair for researchers but prevents plenty of valuable knowledge being shared in research ecosystems and society more generally. Open Access was a good start to helping making research accessible, but there is still a lot of potential to improve on it, and in a way that is sustainable for the research ecosystem—not the publishing giants (who, arguably, do not deserve as much money as they get). Although editing is important, the system can't only work for the editors, which is why we're taking a stand *to put researchers, institutions and citizens first*.
 
-A lot of useful work goes unpublished (e.g. null results, replication studies, full data sets, mistakes worth learning from, simulation code, and more). With no straightforward way to share this knowledge around, this often isn't easily accessible. 
+A lot of useful work goes unpublished (e.g. null results, replication studies, full data sets, mistakes worth learning from, simulation code, and more). With no straightforward way to share this knowledge around, this often isn't easily accessible.
 
 ## Perverse prestige system
 
@@ -29,7 +30,7 @@ The reputation of researchers in the current model is based on an overly reducti
 
 Although the validity of research is a prerequisite for getting an article through peer-review, it is treated as binary — valid or invalid. If there's anything I've learned from studying science it's that any claim is constantly being questioned. Any model of - or conclusion about - reality is only an assertation of an individual or group at a particular point in time, and rarely something that all parties will forever agree on. In the current system, such conclusions 'become truth' due to the decision of a small number of anonymous peer-reviewers, and not by the scholarly community collectively. We're not saying that all scholars are experts in every speciality and ought to state their opinion on every article, but that any member of the scholarly community *should be able to indicate* their understanding of an article's validity/quality from their epistemological position, at a particular point in time and always able to be updated.
 
-Distinguishing *quality* and *impact* would allow researchers to be assessed on *process*, not only on the results of their research (where, arguably, luck can play a big part). We think if researchers develop good hypotheses and follow methodologies accurately, then they deserve credit regardless of the outcome. We see this as a way to encourage the publishing of replications and null results, as well as other 'less interesting' content which is often claimed to be the cornerstone of good research and lacking an incentive model. A indicator of validity or quality could identify researchers who follow *good process* and could redirect some flows of funding to the people who deserve better compensation.
+Distinguishing *quality* and *impact* would allow researchers to be assessed on *process*, not only on the results of their research (where, arguably, luck can play a big part). We think if researchers develop good hypotheses and follow methodologies accurately, then they deserve credit regardless of the outcome. We see this as a way to encourage replications and the sharing of null results, as well as other 'less interesting' content which are often claimed to be the cornerstone of good research but are rarely seen. A indicator of validity or quality could identify researchers who follow *good process* and could redirect some flows of funding to the people who deserve better compensation.
 
 ## Stuck in static
 
@@ -39,15 +40,15 @@ Articles are still mostly treated as static PDFs with the figures and tables mas
 
 We've been interested in the developments of social networking platforms and how strongly they can shape human behaviour, for good or for worse. On one side you've got the likes of Facebook, Twitter and YouTube where comments can quickly devolve into echo-chambers and polarised communities which breed outrage. On these platforms, content is often micromanaged to maximise user attention and to serve targeted advertising. On the other hand, communities like Wikipedia, Reddit, Stack Overflow and Quora (and even 4chan) are capable of aggregating high quality content and facilitating insightful and productive discussions. This shows the power our digital architectures and community spaces can have on individual and collective behaviour, and much could be learned from these to help us design systems that prioritise relevant content to users and maximise collective intelligence.
 
-## Centralised power
+## Centralised power (Strengthening the Scholarly Commons)
 
-The intellectual pursuit of discovery always produces tremendous value to society, yet we have let ourselves become [enclosed](https://en.wikipedia.org/wiki/Enclosure) by the publishers who tell us they are absolutely critical and we have no choice but to go through them. Research ought to be an [act of commoning](http://wealthofthecommons.org/essay/introduction-commons-transformative-vision), something that is done for the sake of collective learning, not to help publishers make a profit. Not even [Open Access scholars have avoided enclosure](https://www.triple-c.at/index.php/tripleC/article/view/525), with [Hindawi, an Open Access publisher, having a higher profit margin (52%) than Elsevier (36%) in 2010](http://threader.ecs.soton.ac.uk/lists/boaiforum/2769.html). It's time for an alternative that resists enclosure and promotes the things scholars actually care about: humanity and good science, for a start.
+The intellectual pursuit of discovery always produces tremendous value to society, yet we have let ourselves become [enclosed](https://en.wikipedia.org/wiki/Enclosure) by the publishers who tell us they are absolutely critical and we have no choice but to go through them. Research ought to be an [act of commoning](http://wealthofthecommons.org/essay/introduction-commons-transformative-vision), something that is done for the sake of collective learning, not to make a profit for publishers or enable scholars to beat their rivals. Not even [Open Access scholars have avoided enclosure](https://www.triple-c.at/index.php/tripleC/article/view/525), with [Hindawi, an Open Access publisher, having a higher profit margin (52%) than Elsevier (36%) in 2010](http://threader.ecs.soton.ac.uk/lists/boaiforum/2769.html). It's time for an alternative that resists enclosure and promotes the things scholars actually care about: humanity and good science, for a start.
 
 # Omni: A fully accessible digital space for sharing and discussing new knowledge
 
 Omni is an **open source** and **distributed** web application enabling scholars to share their research with all relevant audiences, without delays. There is no publisher or publishing in Omni, yet all processes of editing, peer-review, discussion and dissemination of new knowledge can be performed by any user of Omni, and all valuable contributions are tracked.
 
-All data are stored in a Holochain *Distributed Hash Table (DHT)*, which is a shared database not owned by any central party, but is supported by all users of Omni using their currently unused spare computing resources. As long as some users are running the Omni application, no one can shut it down. Since everyone owns their own data in Omni, no one can prevent an author from sharing their research to as many communities as they wish.
+All data are stored in a Holochain *Distributed Hash Table (DHT)*, which is a public database not hosted by any central party, but is supported by all users of Omni using their currently unused spare computing resources. As long as some users are running the Omni application, no one can shut it down. Since everyone owns their own data in Omni, no one can prevent an author from sharing their research to as many communities as they wish.
 
 Omni is not a journal, but a *public digital space* for authors to present their research and receive feedback from anyone in the academic community. With an open peer-review system, and quality assurance protocols decided on by the Omni community, we see the potential for academic research and scholarly communications to improve dramatically.
 
