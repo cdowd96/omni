@@ -5,6 +5,7 @@
 # The Omni Project
 
 ***Omni is the next era of scholarly communications.***
+
 </br></br></br>
 
 # Introduction
